@@ -1,15 +1,28 @@
-import { images } from "../assets/js/assets.js";
+import { images } from "../data/assets.js";
 
 import { useRef } from "react";
 
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
+import Lenis from "lenis";
+
 gsap.registerPlugin(useGSAP, ScrollTrigger, MotionPathPlugin);
 
-export const StringSection = () => {
+// lenis
+const lenis = new Lenis();
+
+lenis.on("scroll", ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
+
+const StringSection = () => {
     const containerRef = useRef();
 
     useGSAP(
@@ -22,7 +35,6 @@ export const StringSection = () => {
 
             const pathLength = path.getTotalLength();
 
-            // Prepare SVG drawing
             gsap.set(path, {
                 strokeDasharray: pathLength,
                 strokeDashoffset: pathLength,
@@ -33,7 +45,6 @@ export const StringSection = () => {
                 scale: 0,
             });
 
-            // Sample points along SVG path
             const samples = 800;
 
             const pathSamples = Array.from({ length: samples + 1 }, (_, i) => {
@@ -47,18 +58,14 @@ export const StringSection = () => {
                 };
             });
 
-            // Find the closest point on the SVG path for each card
             const sectionRect = section.getBoundingClientRect();
 
             const cardProgressMap = cards.map((card) => {
                 const rect = card.getBoundingClientRect();
 
-                // Actual card center relative to the section
                 const centerX = rect.left + rect.width / 2 - sectionRect.left;
-
                 const centerY = rect.top + rect.height / 2 - sectionRect.top;
 
-                // Convert screen coordinates into SVG coordinates
                 const x = (centerX / sectionRect.width) * 1600;
                 const y = (centerY / sectionRect.height) * 900;
 
@@ -80,14 +87,12 @@ export const StringSection = () => {
                 return closestProgress;
             });
 
-            // Initial card state
             gsap.set(cards, {
                 scale: 0.85,
                 opacity: 0.45,
                 filter: "brightness(0.65)",
             });
 
-            // Scroll animation
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: section,
@@ -100,7 +105,6 @@ export const StringSection = () => {
                     onUpdate: (self) => {
                         const progress = self.progress;
 
-                        // Progress counter
                         counter.textContent = String(
                             Math.round(progress * 100),
                         ).padStart(2, "0");
@@ -109,7 +113,6 @@ export const StringSection = () => {
                             width: `${progress * 100}%`,
                         });
 
-                        // Activate cards near the moving particle
                         cards.forEach((card, index) => {
                             const cardProgress = cardProgressMap[index];
 
@@ -140,24 +143,24 @@ export const StringSection = () => {
                     ease: "none",
                 },
                 0,
-            );
+            )
 
-            tl.to(
-                dot,
-                {
-                    motionPath: {
-                        path,
-                        align: path,
-                        alignOrigin: [0.5, 0.5],
+                .to(
+                    dot,
+                    {
+                        motionPath: {
+                            path,
+                            align: path,
+                            alignOrigin: [0.5, 0.5],
+                        },
+
+                        opacity: 1,
+                        scale: 1,
+                        ease: "none",
                     },
-                    opacity: 1,
-                    scale: 1,
-                    ease: "none",
-                },
-                0,
-            );
+                    0,
+                );
 
-            // Atmospheric background animation
             gsap.to(".ambient-orb", {
                 y: -35,
                 x: 20,
@@ -176,14 +179,13 @@ export const StringSection = () => {
             ref={containerRef}
             className="network-section relative h-screen w-full overflow-hidden"
         >
-            {/* Background */}
             <div className="network-grid absolute inset-0" />
 
             <div className="ambient-orb orb-one" />
             <div className="ambient-orb orb-two" />
             <div className="ambient-orb orb-three" />
 
-            {/* Header */}
+            {/* header */}
             <div className="absolute top-8 left-8 z-30 flex items-center gap-3">
                 <div className="brand-symbol">
                     <span />
@@ -195,27 +197,37 @@ export const StringSection = () => {
                     <p className="text-white text-xs font-bold tracking-[0.25em]">
                         N E U R A L
                     </p>
+
                     <p className="text-white/40 text-[9px] tracking-[0.2em]">
                         CONNECTED EXPERIENCES
                     </p>
                 </div>
             </div>
 
-            {/* Top right */}
+            {/* top right */}
+
             <div className="absolute top-10 right-8 z-30 hidden sm:block">
                 <p className="text-white/40 text-[10px] tracking-[0.3em]">
                     AN INTERACTIVE JOURNEY / 2026
                 </p>
             </div>
 
-            {/* Central typography */}
-            <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+            <div
+                className="absolute inset-0 z-10 flex items-center justify-center
+                pointer-events-none"
+            >
                 <div className="text-center">
-                    <p className="text-cyan-300/70 text-[10px] sm:text-xs tracking-[0.5em] mb-5">
+                    <p
+                        className="text-cyan-300/70 text-[10px] sm:text-xs 
+                        tracking-[0.5em] mb-5"
+                    >
                         EVERYTHING IS CONNECTED
                     </p>
 
-                    <h1 className="text-white font-semibold uppercase leading-[0.85] tracking-[-0.07em] text-5xl sm:text-7xl md:text-8xl lg:text-[110px]">
+                    <h1
+                        className="text-white font-semibold uppercase leading-[0.85]
+                        tracking-[-0.07em] text-5xl sm:text-7xl md:text-8xl lg:text-[110px]"
+                    >
                         DESIGNED
                         <br />
                         TO FEEL
@@ -229,7 +241,8 @@ export const StringSection = () => {
                 </div>
             </div>
 
-            {/* SVG network */}
+            {/* svg */}
+
             <svg
                 className="absolute inset-0 z-5 w-full h-full"
                 viewBox="0 0 1600 900"
@@ -324,13 +337,14 @@ export const StringSection = () => {
                 />
             </svg>
 
-            {/* Moving particle */}
+            {/* dot*/}
             <div className="moving-dot absolute top-0 left-0 z-30">
                 <div className="dot-core" />
                 <div className="dot-halo" />
             </div>
 
-            {/* Icon cards */}
+            {/* cards */}
+
             {images.map((item) => {
                 const Icon = item.icon;
 
@@ -376,11 +390,12 @@ export const StringSection = () => {
                 );
             })}
 
-            {/* Bottom information */}
+            {/* info */}
             <div className="absolute bottom-8 left-8 z-30">
                 <p className="text-white/35 text-[9px] tracking-[0.25em]">
                     SCROLL TO EXPLORE
                 </p>
+
                 <div className="w-24 h-0.5 bg-white/10 mt-3 overflow-hidden">
                     <div className="progress-line h-full bg-cyan-300" />
                 </div>
@@ -392,12 +407,18 @@ export const StringSection = () => {
                 </p>
 
                 <div className="flex items-baseline justify-end gap-1 mt-1">
-                    <span className="progress-number text-white text-3xl font-light tabular-nums">
+                    <span
+                        className="progress-number text-white text-3xl 
+                        font-light tabular-nums"
+                    >
                         00
                     </span>
+
                     <span className="text-white/40 text-xs">%</span>
                 </div>
             </div>
         </section>
     );
 };
+
+export default StringSection;

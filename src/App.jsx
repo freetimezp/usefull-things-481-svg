@@ -1,18 +1,26 @@
-import { ArrowDown, ArrowUpRight } from "lucide-react";
-import { StringSection } from "./components/StringSection";
+import "./App.css";
 
-const App = () => {
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+
+import StringSection from "./components/StringSection.jsx";
+
+function App() {
     return (
         <main className="bg-[#080a14]">
-            {/* Intro */}
-            <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden text-center text-white">
-                <div className="absolute w-[500px] h-[500px] rounded-full bg-violet-500/10 blur-[150px]" />
+            <section
+                className="relative h-screen flex flex-col items-center 
+                justify-center overflow-hidden text-center text-white"
+            >
+                <div
+                    className="absolute w-125 h-125 rounded-full 
+                    bg-violet-500/10 blur-[150px]"
+                />
 
-                <p className="text-cyan-300/70 text-xs tracking-[.5em] mb-8">
+                <p className="text-cyan-300/70 text-xs tracking-[0.5em] mb-8">
                     A DIGITAL EXPERIENCE
                 </p>
 
-                <h1 className="text-6xl sm:text-8xl font-semibold tracking-[-.07em] uppercase">
+                <h1 className="text-6xl sm:text-8xl font-semibold tracking-[-0.07em] uppercase">
                     Beyond
                     <br />
                     <span className="text-white/30">The Ordinary.</span>
@@ -23,25 +31,37 @@ const App = () => {
                     discover something unexpected.
                 </p>
 
-                <div className="absolute bottom-12 flex flex-col items-center gap-3 text-white/40">
+                <div
+                    className="absolute bottom-12 flex flex-col items-center
+                    gap-3 text-white/40"
+                >
                     <span className="text-[10px] tracking-[.3em]">
                         SCROLL TO DISCOVER
                     </span>
+
                     <ArrowDown size={17} />
                 </div>
             </section>
 
             <StringSection />
 
-            {/* Outro */}
-            <section className="relative h-screen flex flex-col items-center justify-center text-center text-white overflow-hidden">
-                <div className="absolute w-[500px] h-[500px] rounded-full bg-cyan-400/10 blur-[150px]" />
+            <section
+                className="relative h-screen flex flex-col items-center justify-center 
+                text-center text-white overflow-hidden"
+            >
+                <div
+                    className="absolute w-125 h-125 rounded-full bg-cyan-400/10 
+                    blur-[150px]"
+                />
 
-                <p className="text-cyan-300/70 text-xs tracking-[.5em] mb-8">
+                <p className="text-cyan-300/70 text-xs tracking-[0.5em] mb-8">
                     THE JOURNEY CONTINUES
                 </p>
 
-                <h2 className="text-6xl sm:text-8xl font-semibold tracking-[-.07em] uppercase">
+                <h2
+                    className="text-6xl sm:text-8xl font-semibold 
+                    tracking-[-0.07em] uppercase"
+                >
                     Stay
                     <br />
                     <span className="text-white/30">Curious.</span>
@@ -49,18 +69,23 @@ const App = () => {
 
                 <a
                     href="#"
-                    className="mt-12 flex items-center gap-3 px-7 py-4 rounded-full border border-white/15 text-sm hover:bg-white hover:text-black transition-all duration-500"
+                    className="mt-12 flex items-center gap-3 px-7 py-4 rounded-full
+                    border border-white/15 text-sm hover:bg-white hover:text-black
+                    transition-all duration-500"
                 >
                     Explore more
                     <ArrowUpRight size={17} />
                 </a>
 
-                <div className="absolute bottom-10 text-white/25 text-[9px] tracking-[.3em]">
+                <div
+                    className="absolute bottom-20 text-white/25 
+                    text-[9px] tracking-[.3em]"
+                >
                     DESIGNED TO FEEL ALIVE — 2026
                 </div>
             </section>
         </main>
     );
-};
+}
 
 export default App;

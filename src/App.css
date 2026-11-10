@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
+
 @import "tailwindcss";
 
 ::-webkit-scrollbar {
@@ -10,6 +11,7 @@
     background:
         radial-gradient(ellipse at 50% 50%, #171c35 0%, transparent 55%),
         #080a14;
+
     isolation: isolate;
 }
 
@@ -19,6 +21,7 @@
         linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
     background-size: 55px 55px;
     mask-image: radial-gradient(ellipse, black 10%, transparent 85%);
+
     opacity: 0.7;
 }
 
@@ -26,7 +29,9 @@
     position: absolute;
     width: 350px;
     height: 350px;
+
     border-radius: 50%;
+
     filter: blur(100px);
     pointer-events: none;
     z-index: 0;
@@ -38,13 +43,11 @@
     left: 15%;
     background: #6366f1;
 }
-
 .orb-two {
     right: 10%;
     bottom: 5%;
     background: #06b6d4;
 }
-
 .orb-three {
     top: 35%;
     left: 45%;
@@ -61,6 +64,7 @@
 .brand-symbol span {
     width: 5px;
     height: 20px;
+
     border-radius: 5px;
     background: #67e8f9;
     transform: skew(-20deg);
@@ -78,6 +82,7 @@
 
 .gradient-text {
     background: linear-gradient(110deg, #67e8f9, #a78bfa 50%, #f0abfc);
+
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -86,12 +91,16 @@
 .node-card {
     min-width: 205px;
     padding: 10px 13px;
+
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 14px;
+
     background: rgba(13, 17, 34, 0.78);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
+
     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+
     transition:
         border-color 0.4s ease,
         background 0.4s ease,
@@ -102,12 +111,17 @@
     width: 43px;
     height: 43px;
     flex-shrink: 0;
+
     display: grid;
     place-items: center;
+
     border-radius: 11px;
+
     color: var(--accent);
+
     background: color-mix(in srgb, var(--accent) 12%, transparent);
     border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+
     transition: 0.4s ease;
 }
 
@@ -123,6 +137,7 @@
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+
     color: white;
     white-space: nowrap;
 }
@@ -131,6 +146,7 @@
     margin-top: 4px;
     font-size: 9px;
     letter-spacing: 0.05em;
+
     color: rgba(255, 255, 255, 0.38);
     white-space: nowrap;
 }
@@ -139,7 +155,9 @@
     width: 5px;
     height: 5px;
     margin-left: auto;
+
     flex-shrink: 0;
+
     border-radius: 50%;
     background: var(--accent);
     opacity: 0.4;
@@ -149,6 +167,7 @@
 .im-card.is-active .node-card {
     border-color: color-mix(in srgb, var(--accent) 65%, transparent);
     background: rgba(23, 28, 48, 0.95);
+
     box-shadow:
         0 0 25px color-mix(in srgb, var(--accent) 13%, transparent),
         0 15px 40px rgba(0, 0, 0, 0.3);
@@ -156,11 +175,13 @@
 
 .im-card.is-active .node-icon {
     background: color-mix(in srgb, var(--accent) 22%, transparent);
+
     box-shadow: 0 0 20px color-mix(in srgb, var(--accent) 25%, transparent);
 }
 
 .im-card.is-active .node-indicator {
     opacity: 1;
+
     box-shadow: 0 0 12px 3px var(--accent);
 }
 
@@ -181,8 +202,10 @@
 .dot-halo {
     position: absolute;
     inset: -5px;
+
     border: 1px solid rgba(103, 232, 249, 0.7);
     border-radius: 50%;
+
     box-shadow: 0 0 20px rgba(103, 232, 249, 0.4);
 }
 
@@ -206,6 +229,7 @@
         width: 148px;
         min-width: 148px;
         padding: 7px 8px;
+
         gap: 8px;
         border-radius: 11px;
     }
