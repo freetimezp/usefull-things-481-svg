@@ -1,0 +1,250 @@
+A DIGITAL EXPERIENCE
+
+
+Beyond<br />
+<span className="text-white/30">The Ordinary.</span>
+
+
+Every idea begins somewhere. Follow the connections and
+discover something unexpected.
+
+
+<span className="text-[10px] tracking-[.3em]">
+SCROLL TO DISCOVER
+</span>
+<ArrowDown size={17} />
+
+
+THE JOURNEY CONTINUES
+
+
+Stay
+<br />
+<span className="text-white/30">Curious.</span>
+
+
+Explore more
+<ArrowUpRight size={17} />
+
+
+DESIGNED TO FEEL ALIVE — 2026
+
+
+
+
+
+<p className="text-white text-xs font-bold tracking-[0.25em]">
+N E U R A L
+</p>
+<p className="text-white/40 text-[9px] tracking-[0.2em]">
+CONNECTED EXPERIENCES
+</p>
+
+
+
+<p className="text-white/40 text-[10px] tracking-[0.3em]">
+AN INTERACTIVE JOURNEY / 2026
+</p>
+
+
+
+EVERYTHING IS CONNECTED
+
+
+DESIGNED
+<br />
+TO FEEL
+<br />
+<span className="gradient-text">ALIVE.</span>
+
+
+FOLLOW THE CONNECTION
+
+
+           <svg
+                className="absolute inset-0 z-5 w-full h-full"
+                viewBox="0 0 1600 900"
+                preserveAspectRatio="none"
+                fill="none"
+            >
+                <defs>
+                    <linearGradient
+                        id="network-gradient"
+                        x1="0"
+                        y1="0"
+                        x2="1600"
+                        y2="900"
+                        gradientUnits="userSpaceOnUse"
+                    >
+                        <stop stopColor="#67E8F9" />
+                        <stop offset=".45" stopColor="#A78BFA" />
+                        <stop offset="1" stopColor="#F472B6" />
+                    </linearGradient>
+
+                    <filter
+                        id="path-glow"
+                        x="-50%"
+                        y="-50%"
+                        width="200%"
+                        height="200%"
+                    >
+                        <feGaussianBlur stdDeviation="4" result="blur" />
+                        <feMerge>
+                            <feMergeNode in="blur" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                </defs>
+
+                {/* Static subtle path */}
+                <path
+                    d="
+                        M 800,198
+                        C 950,190 980,50 1056,234
+                        C 1120,350 1200,100 1264,306
+                        C 1320,450 1150,420 1296,450
+                        C 1420,480 1250,600 1216,639
+                        C 1180,680 1280,820 1216,639
+                        C 1120,420 850,750 928,729
+                        C 1000,710 940,850 928,729
+                        C 900,600 750,700 656,747
+                        C 550,800 600,920 656,747
+                        C 720,580 500,750 480,747
+                        C 400,740 380,850 320,540
+                        C 280,300 180,650 240,405
+                        C 280,200 100,420 240,405
+                        C 380,390 320,500 448,306
+                        C 520,180 350,220 448,306
+                        C 520,380 680,210 800,198
+                        Z
+                    "
+                    stroke="white"
+                    strokeOpacity=".08"
+                    strokeWidth="1"
+                    strokeDasharray="4 8"
+                />
+
+                {/* Animated path */}
+                <path
+                    id="network-path"
+                    d="
+                        M 800,198
+                        C 950,190 980,50 1056,234
+                        C 1120,350 1200,100 1264,306
+                        C 1320,450 1150,420 1296,450
+                        C 1420,480 1250,600 1216,639
+                        C 1180,680 1280,820 1216,639
+                        C 1120,420 850,750 928,729
+                        C 1000,710 940,850 928,729
+                        C 900,600 750,700 656,747
+                        C 550,800 600,920 656,747
+                        C 720,580 500,750 480,747
+                        C 400,740 380,850 320,540
+                        C 280,300 180,650 240,405
+                        C 280,200 100,420 240,405
+                        C 380,390 320,500 448,306
+                        C 520,180 350,220 448,306
+                        C 520,380 680,210 800,198
+                        Z
+                    "
+                    stroke="url(#network-gradient)"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    filter="url(#path-glow)"
+                />
+            </svg>
+
+
+
+
+<p className="text-white/35 text-[9px] tracking-[0.25em]">
+SCROLL TO EXPLORE
+</p>
+
+
+
+<p className="text-white/35 text-[9px] tracking-[0.25em]">
+JOURNEY PROGRESS
+</p>
+
+
+
+<span className="progress-number text-white text-3xl font-light tabular-nums">
+00
+</span>
+<span className="text-white/40 text-xs">%</span>
+
+
+
+
+background:
+        radial-gradient(ellipse at 50% 50%, #171c35 0%, transparent 55%),
+        #080a14;
+
+
+
+background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 55px 55px;
+    mask-image: radial-gradient(ellipse, black 10%, transparent 85%);
+
+
+
+
+.orb-one {
+    top: 5%;
+    left: 15%;
+    background: #6366f1;
+}
+.orb-two {
+    right: 10%;
+    bottom: 5%;
+    background: #06b6d4;
+}
+.orb-three {
+    top: 35%;
+    left: 45%;
+    background: #a855f7;
+    opacity: 0.1;
+}
+
+
+
+background: linear-gradient(110deg, #67e8f9, #a78bfa 50%, #f0abfc);
+
+
+
+background: color-mix(in srgb, var(--accent) 12%, transparent);
+border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+
+
+
+border-color: color-mix(in srgb, var(--accent) 65%, transparent);
+background: rgba(23, 28, 48, 0.95);
+box-shadow:
+        0 0 25px color-mix(in srgb, var(--accent) 13%, transparent),
+        0 15px 40px rgba(0, 0, 0, 0.3);
+
+
+
+background: color-mix(in srgb, var(--accent) 22%, transparent);
+box-shadow: 0 0 20px color-mix(in srgb, var(--accent) 25%, transparent);
+
+
+
+
+
+const section = containerRef.current;
+            const path = section.querySelector("#network-path");
+            const dot = section.querySelector(".moving-dot");
+            const cards = gsap.utils.toArray(".im-card", section);
+            const counter = section.querySelector(".progress-number");
+
+            const pathLength = path.getTotalLength();
+
+
+
+
+
