@@ -191,26 +191,38 @@
     box-shadow: 0 0 12px #67e8f9;
 }
 
+.im-card {
+    left: var(--card-x);
+    top: var(--card-y);
+}
+
 @media (max-width: 768px) {
+    .im-card {
+        left: var(--mobile-x);
+        top: var(--mobile-y);
+    }
+
     .node-card {
-        min-width: auto;
-        padding: 7px;
-        gap: 7px;
-        border-radius: 10px;
+        width: 148px;
+        min-width: 148px;
+        padding: 7px 8px;
+        gap: 8px;
+        border-radius: 11px;
     }
 
     .node-icon {
-        width: 34px;
-        height: 34px;
+        width: 29px;
+        height: 29px;
     }
 
     .node-icon svg {
-        width: 18px;
-        height: 18px;
+        width: 16px;
+        height: 16px;
     }
 
     .node-title {
-        font-size: 9px;
+        font-size: 8px;
+        letter-spacing: 0.04em;
     }
 
     .node-number {
@@ -219,6 +231,10 @@
 
     .node-category {
         font-size: 7px;
+    }
+
+    .node-info {
+        min-width: 0;
     }
 
     .ambient-orb {

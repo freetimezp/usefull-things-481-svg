@@ -48,9 +48,19 @@ export const StringSection = () => {
             });
 
             // Find the closest point on the SVG path for each card
+            const sectionRect = section.getBoundingClientRect();
+
             const cardProgressMap = cards.map((card) => {
-                const x = (parseFloat(card.style.left) / 100) * 1600;
-                const y = (parseFloat(card.style.top) / 100) * 900;
+                const rect = card.getBoundingClientRect();
+
+                // Actual card center relative to the section
+                const centerX = rect.left + rect.width / 2 - sectionRect.left;
+
+                const centerY = rect.top + rect.height / 2 - sectionRect.top;
+
+                // Convert screen coordinates into SVG coordinates
+                const x = (centerX / sectionRect.width) * 1600;
+                const y = (centerY / sectionRect.height) * 900;
 
                 let closestProgress = 0;
                 let closestDistance = Infinity;
@@ -58,6 +68,7 @@ export const StringSection = () => {
                 pathSamples.forEach((point) => {
                     const dx = point.x - x;
                     const dy = point.y - y;
+
                     const distance = dx * dx + dy * dy;
 
                     if (distance < closestDistance) {
@@ -222,7 +233,7 @@ export const StringSection = () => {
             <svg
                 className="absolute inset-0 z-5 w-full h-full"
                 viewBox="0 0 1600 900"
-                preserveAspectRatio="xMidYMid slice"
+                preserveAspectRatio="none"
                 fill="none"
             >
                 <defs>
@@ -328,9 +339,14 @@ export const StringSection = () => {
                         key={item.number}
                         className="im-card absolute z-20"
                         style={{
-                            left: item.x,
-                            top: item.y,
                             "--accent": item.color,
+
+                            "--card-x": item.x,
+                            "--card-y": item.y,
+
+                            "--mobile-x": item.mobileX,
+                            "--mobile-y": item.mobileY,
+
                             transform: "translate(-50%, -50%)",
                             transformOrigin: "center center",
                         }}
@@ -365,7 +381,7 @@ export const StringSection = () => {
                 <p className="text-white/35 text-[9px] tracking-[0.25em]">
                     SCROLL TO EXPLORE
                 </p>
-                <div className="w-24 h-[2px] bg-white/10 mt-3 overflow-hidden">
+                <div className="w-24 h-0.5 bg-white/10 mt-3 overflow-hidden">
                     <div className="progress-line h-full bg-cyan-300" />
                 </div>
             </div>

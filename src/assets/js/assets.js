@@ -20,6 +20,8 @@ export const images = [
         color: "#FFB86B",
         x: "50%",
         y: "22%",
+        mobileX: "50%",
+        mobileY: "22%",
     },
     {
         icon: Telescope,
@@ -29,6 +31,8 @@ export const images = [
         color: "#A78BFA",
         x: "66%",
         y: "26%",
+        mobileX: "70%",
+        mobileY: "26%",
     },
     {
         icon: MousePointer2,
@@ -38,6 +42,8 @@ export const images = [
         color: "#67E8F9",
         x: "79%",
         y: "34%",
+        mobileX: "75%",
+        mobileY: "34%",
     },
     {
         icon: Network,
@@ -47,6 +53,8 @@ export const images = [
         color: "#F472B6",
         x: "81%",
         y: "50%",
+        mobileX: "75%",
+        mobileY: "50%",
     },
     {
         icon: Sparkles,
@@ -56,6 +64,8 @@ export const images = [
         color: "#FDE68A",
         x: "76%",
         y: "71%",
+        mobileX: "75%",
+        mobileY: "71%",
     },
     {
         icon: Orbit,
@@ -65,6 +75,8 @@ export const images = [
         color: "#86EFAC",
         x: "58%",
         y: "81%",
+        mobileX: "58%",
+        mobileY: "81%",
     },
     {
         icon: Navigation,
@@ -74,6 +86,8 @@ export const images = [
         color: "#93C5FD",
         x: "41%",
         y: "83%",
+        mobileX: "41%",
+        mobileY: "83%",
     },
     {
         icon: Layers3,
@@ -83,6 +97,8 @@ export const images = [
         color: "#FDBA74",
         x: "20%",
         y: "60%",
+        mobileX: "25%",
+        mobileY: "60%",
     },
     {
         icon: Brain,
@@ -92,6 +108,8 @@ export const images = [
         color: "#C4B5FD",
         x: "15%",
         y: "45%",
+        mobileX: "25%",
+        mobileY: "45%",
     },
     {
         icon: Infinity,
@@ -101,5 +119,7 @@ export const images = [
         color: "#5EEAD4",
         x: "28%",
         y: "34%",
+        mobileX: "30%",
+        mobileY: "34%",
     },
 ];
